@@ -15,8 +15,21 @@ contract Inbox {
         message = newMessage;
     }
     
+/*  
+
+// This can be deleted because getters are created from contract initial variables
     function getMessage() public view returns (string memory) {
         return message;
     }
     
+    
+// gas transaction cost
+    function doMath(int a, int b) public pure {
+        a + b; // f.ex. 3 gas
+        b - a; // f.ex. 3 gas
+        a * b; // f.ex. 5 gas
+        a == 0 ; // f.ex. 3 gas
+    }
+    
+*/    
 }

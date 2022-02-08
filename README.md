@@ -44,4 +44,22 @@ and have certian behaviour
 
 - view - do not modify the state
 - pure - do not modify the state and do not read the state
-- payable - 
+- payable - can recieve ether into a contract
+
+***
+
+"_" before variable means that it is a function parameter and to avoid collisions;
+
+***
+**Functions modifiers** - it is reusable code which is run before and/or after the function
+
+Example of use:
+- restricting write access (we don't have public functions which somebody can use)
+- input validation (we can validate what the user typed)
+- it is Reentrancy guard (it can block multiple reentrance to function which could be very expensive)
+
+- **modifier** - declarying modifier
+- "_;" some code - we are telling solidity to execute "some code" after executing function (do not think about modidfier here)
+- some code "_;" - we are telling solidity to execute "some code" before executing function (do not think about modidfier here)
+
+***

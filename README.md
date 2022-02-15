@@ -63,3 +63,7 @@ Example of use:
 - some code "_;" - we are telling solidity to execute "some code" before executing function (do not think about modidfier here)
 
 ***
+
+**Constructors** - are executed only when contract is created
+
+Constructors have access to special variables like msg.sender, block.timestamp as the normal functions.

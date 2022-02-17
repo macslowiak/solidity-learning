@@ -1,5 +1,9 @@
 # NOTES
 
+***
+** WE ARE STARTING WITH SOLIDITY 0.5 **
+***
+
 Variables are declared as either storage, memory or calldata to explicitly specify the location of the data.
 - **storage** - variable is a state variable (store on blockchain)
 - **memory** - variable is in memory and it exists while a function is being called
@@ -42,8 +46,8 @@ Functions can be:
 
 and have certian behaviour
 
-- view - do not modify the state
-- pure - do not modify the state and do not read the state
+- view - do not modify the state (its about storage)
+- pure - do not modify the state and do not read the state (its about storage)
 - payable - can recieve ether into a contract
 
 ***
@@ -67,3 +71,31 @@ Example of use:
 **Constructors** - are executed only when contract is created
 
 Constructors have access to special variables like msg.sender, block.timestamp as the normal functions.
+
+***
+
+Inheritance with SINGLE PARENT:
+- inherit functions  - we are doing it by word "is"
+- override functions - we can override function by copying it and changing the output 
+**if we f.ex. add input to the function that inherits it will be another function then**
+
+Passing parameters to parent constructor:
+- we can simply pass parameters by **contract B is A("Contract B")**
+- we can also require parameter in contract B then **contract B is A { constructor(string memory _name) A(_name) public {}}**
+
+***
+MULTIPLE INHERITANCE
+
+- we inherit by using "is" word with contracts name and "," separator
+- if we inherit two contracts with the same name of functions,  contract will inherits las mentioned contract [**right most parent contract**] 
+(it is an exception when we want to inherit contract that inherits from other (A) and contract that not inherits from others (B).
+In this situation **contract D is A, B** will get error)
+
+
+- we have to ways to calling function from other contracts 
+1. We are using **right most parent** convention 
+2. We are using word **super** - then all function with super are called
+- the difference is that in the first case we can f.ex. call A and C(inherits from A) functions and in 
+the second one we can cal A, B and C when we have **super** word
+- we use word "super" to call all parents contracts
+

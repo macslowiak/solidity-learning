@@ -99,3 +99,7 @@ In this situation **contract D is A, B** will get error)
 the second one we can cal A, B and C when we have **super** word
 - we use word "super" to call all parents contracts
 
+The order which the parent constructors are called are determined by inheritance.
+To override state variable of a parent re-assign it using constructor (do not simply re-declare in the child contract)
+
+

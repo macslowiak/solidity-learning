@@ -92,7 +92,7 @@ MULTIPLE INHERITANCE
 In this situation **contract D is A, B** will get error)
 
 
-- we have to ways to calling function from other contracts 
+- we have two ways to call function from other contracts 
 1. We are using **right most parent** convention 
 2. We are using word **super** - then all function with super are called
 - the difference is that in the first case we can f.ex. call A and C(inherits from A) functions and in 
@@ -102,4 +102,14 @@ the second one we can cal A, B and C when we have **super** word
 The order which the parent constructors are called are determined by inheritance.
 To override state variable of a parent re-assign it using constructor (do not simply re-declare in the child contract)
 
+***
 
+VISIBILITY OF VARIABLES AND FUNCTIONS
+
+Functions can be:
+- private - only accesible in contract that defined it 
+- internal - it accesible in contract that defined it and also in child contracts
+- public - accesible for everything - visible for everyone
+- external - can only be called by other contracts (cannot store variables in contract) - visible for accounts and contracts
+
+Don't keep sensitive data in private or internal (they are not safe there)

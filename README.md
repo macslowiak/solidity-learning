@@ -113,3 +113,16 @@ Functions can be:
 - external - can only be called by other contracts (cannot store variables in contract) - visible for accounts and contracts
 
 Don't keep sensitive data in private or internal (they are not safe there)
+
+***
+
+EVENTS 
+
+- To create an *event* we are using event word
+- To firing an event we are using *emit* word (Firing events means calling them)
+- Logs from events are stored in the blockchain
+- When we use indexed parameter (only 3 in one function) we can search for the certain value (f.ex. address indexed sender)
+- We can use web3.js to get past events and subscribe incoming events
+
+Why to use events:
+- to record that something happen on the blockchain
